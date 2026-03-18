@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Use the generated mountain background image */
+    background-image: url('https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1773801541566%2Fassets%2Fmountain_background-1773801637239.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+.clock-container {
+    text-align: center;
+    /* Add drop shadow to make text pop against background just like the screenshot */
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8), 0px 0px 5px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.date {
+    /* Responsive font sizing based on viewport width */
+    font-size: 3.5vw;
+    font-weight: 300; /* Light weight as seen in image */
+    margin-bottom: 0.5vw;
+    letter-spacing: 0.05em;
+    opacity: 0.95;
+}
+
+.time {
+    /* Massive responsive font size for the time */
+    font-size: 14vw;
+    font-weight: 700; /* Bold weight as seen in image */
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+/* Fallback for extremely wide screens or different aspect ratios */
+@media (min-aspect-ratio: 2/1) {
+    .date { font-size: 5vh; margin-bottom: 1vh; }
+    .time { font-size: 20vh; }
+}
+
+/* Adjustments for smaller/portrait screens to keep it responsive */
+@media (max-width: 768px) {
+    .date {
+        font-size: 6vw;
+        margin-bottom: 2vw;
+    }
+    .time {
+        font-size: 18vw;
+    }
+}
